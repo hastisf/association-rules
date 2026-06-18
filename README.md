@@ -1,88 +1,78 @@
-🛒 Dashboard Association Rules Recommendation
-Aplikasi web untuk menganalisis pola pembelian pelanggan dan menghasilkan rekomendasi produk menggunakan kombinasi metode Association Rules Metode: Item-to-Item Collaborative Filtering (Pearson Correlation), dibangun dengan Streamlit.
+# Retail Recommendation Engine
 
-🔗 Live Demo: collaborativerules.streamlit.app
+Aplikasi web berbasis **Streamlit** untuk memberikan rekomendasi produk yang dipersonalisasi. Proyek ini mengintegrasikan pendekatan **Content-Based Filtering** dan **Collaborative Filtering** untuk mengoptimalkan strategi penjualan dan membantu pelanggan menemukan produk yang relevan.
 
-📌 Tentang Project
-Project ini bertujuan mengidentifikasi hubungan antar produk yang sering dibeli pelanggan serta memberikan rekomendasi produk yang relevan berdasarkan histori transaksi retail.
+## 📑 Daftar Isi
+- [Tentang Project](#-tentang-project)
+- [Fitur Utama](#-fitur-utama)
+- [Metodologi](#-metodologi)
+- [Tech Stack](#-tech-stack)
+- [Cara Menjalankan](#-cara-menjalankan)
+- [Manfaat Bisnis](#-manfaat-bisnis)
 
-Aplikasi menggabungkan 2 pendekatan rekomendasi:
-Content-Based Filtering untuk merekomendasikan produk dengan karakteristik serupa.
-Collaborative Filtering untuk merekomendasikan produk berdasarkan perilaku pelanggan yang mirip.
-Dataset yang digunakan berasal dari transaksi retail online yang berisi informasi invoice, produk, kuantitas, harga, dan pelanggan.
+---
 
-🎯 Tujuan Analisis
-Menemukan produk yang sering dibeli bersama.
-Memberikan rekomendasi produk secara otomatis.
-Membantu strategi cross-selling dan bundling produk.
-Mengidentifikasi preferensi pelanggan berdasarkan histori pembelian.
-🗂️ Struktur Project
+## 🎯 Tentang Project
+Proyek ini bertujuan untuk menyediakan sistem rekomendasi yang membantu pelanggan menemukan produk sesuai dengan minat mereka. Dengan memanfaatkan histori transaksi, aplikasi ini memberikan saran berdasarkan karakteristik produk serta perilaku belanja pelanggan lain.
+
+---
+
+## 🚀 Fitur Utama
+* **Product Recommendation:** Saran produk otomatis berdasarkan input pilihan pengguna.
+* **Content-Based Filtering:** Menampilkan produk dengan atribut atau karakteristik serupa.
+* **Collaborative Filtering:** Menampilkan produk yang disukai oleh pelanggan dengan perilaku belanja yang mirip.
+* **Interactive Dashboard:** Eksplorasi data transaksi dan sistem rekomendasi secara *real-time* melalui antarmuka yang intuitif.
+
+---
+
+## 📊 Metodologi
+
+### 1. Content-Based Filtering
+Menggunakan kemiripan fitur produk untuk merekomendasikan item yang memiliki karakteristik serupa dengan produk yang dipilih oleh pengguna.
+
+### 2. Collaborative Filtering
+Menganalisis pola pembelian antar pelanggan untuk menemukan produk yang sering dibeli oleh pengguna dengan minat yang sama.
+
+---
+
+## 🛠️ Tech Stack
+* **Language:** Python
+* **Framework:** Streamlit
+* **Data Processing:** Pandas, NumPy
+* **Machine Learning:** Scikit-Learn
+* **Deployment:** Streamlit Community Cloud
+
+---
+
+## 📂 Struktur Project
+```text
 assorules/
-├── app.py                  # Aplikasi Streamlit
-├── model/
-│   ├── df_master_cf
-│   ├── product_corr
-├── requirements.txt
+├── app.py                # Main Streamlit application
+├── model/                # Pre-trained models & processed data
+├── requirements.txt      # Dependencies
 └── README.md
 
-⚙️ Fitur Dashboard
-Fitur	Keterangan
-Product Recommendation	Rekomendasi produk berdasarkan produk yang dipilih
-Content-Based Filtering	Menampilkan produk dengan karakteristik serupa
-Collaborative Filtering	Menampilkan produk yang disukai pelanggan serupa
-Market Basket Analysis	Analisis kombinasi produk dalam satu transaksi
-Interactive Dashboard	Visualisasi dan eksplorasi data secara interaktif
+## ⚙️ Cara Menjalankan
 
-📊 Metode yang Digunakan
-1. Content-Based Filtering
-Merekomendasikan produk berdasarkan kemiripan atribut atau karakteristik produk.
+1. **Clone repository:**
+   ```bash
+   git clone [https://github.com/username/assorules.git](https://github.com/username/assorules.git)
+   cd assorules
 
-Contoh:
-
-KNITTED UNION FLAG HOT WATER BOTTLE
-→ WHITE SKULL HOT WATER BOTTLE
-2. Collaborative Filtering
-Merekomendasikan produk berdasarkan pola pembelian pelanggan lain yang memiliki perilaku serupa.
-
-Contoh:
-
-RED WOOLLY HOTTIE WHITE HEART
-→ SCOTTIE DOG HOT WATER BOTTLE
-
-🚀 Cara Menjalankan Lokal
-# Clone repository
-git clone https://hastisf/association-rules.git
-
-# Masuk ke folder project
-cd assorules
-
-# Install dependency
 pip install -r requirements.txt
-
-# Jalankan aplikasi
 streamlit run app.py
-Aplikasi akan berjalan di:
 
-http://localhost:8501
-🌐 Deploy
-Aplikasi dideploy menggunakan Streamlit Community Cloud sehingga dapat diakses secara online melalui browser tanpa instalasi tambahan.
+## 📈 Manfaat Bisnis
+* **Personalisasi Pengalaman:** Meningkatkan relevansi produk bagi setiap pelanggan dengan rekomendasi yang dipersonalisasi.
+* **Peningkatan Engagement:** Mempercepat proses pencarian produk bagi pelanggan sehingga waktu interaksi di platform lebih efisien.
+* **Data-Driven Insight:** Memahami pola preferensi belanja pelanggan secara mendalam untuk mendukung pengambilan keputusan pemasaran yang lebih tepat sasaran.
 
-🛠️ Tech Stack
-Python
-Streamlit
-Pandas
-NumPy
-Scikit-Learn
-Collaborative Filtering
+---
 
-📈 Manfaat Bisnis
-Meningkatkan peluang cross-selling.
-Membantu penyusunan paket bundling produk.
-Memahami perilaku pembelian pelanggan.
-Mendukung pengambilan keputusan pemasaran berbasis data.
-Mengoptimalkan strategi promosi dan penempatan produk.
+## 🌐 Live Demo
+Akses aplikasi melalui browser tanpa perlu instalasi:
+👉 **[collaborativerules.streamlit.app](https://collaborativerules.streamlit.app)**
 
-⚠️ Catatan
-Hasil rekomendasi bergantung pada kualitas dan jumlah data transaksi yang tersedia.
-Tidak semua produk akan menghasilkan association rules yang kuat.
-Project ini dibuat untuk tujuan pembelajaran data mining, machine learning, dan sistem rekomendasi pada data retail.
+---
+
+*Dibuat untuk tujuan edukasi dan pengembangan sistem rekomendasi retail.*
