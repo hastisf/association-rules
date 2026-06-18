@@ -75,13 +75,13 @@ streamlit run app.py
 Aplikasi akan berjalan di:
 http://localhost:8501
 
-
+---
 
 ## 🌐 Deploy
 
 Aplikasi dideploy menggunakan Streamlit Community Cloud sehingga dapat diakses secara online melalui browser tanpa instalasi tambahan.
 
-
+---
 
 ## 🚀 Fitur Dashboard
 
