@@ -1,14 +1,8 @@
-# Retail Recommendation Engine
+# 🛒 Dashboard Association Rules Recommendation
 
 Aplikasi web berbasis **Streamlit** untuk memberikan rekomendasi produk yang dipersonalisasi. Proyek ini mengintegrasikan pendekatan **Content-Based Filtering** dan **Collaborative Filtering** untuk mengoptimalkan strategi penjualan dan membantu pelanggan menemukan produk yang relevan.
 
-## 📑 Daftar Isi
-- [Tentang Project](#-tentang-project)
-- [Fitur Utama](#-fitur-utama)
-- [Metodologi](#-metodologi)
-- [Tech Stack](#-tech-stack)
-- [Cara Menjalankan](#-cara-menjalankan)
-- [Manfaat Bisnis](#-manfaat-bisnis)
+🔗 Live Demo: collaborativerules.streamlit.app
 
 ---
 
@@ -29,13 +23,22 @@ Proyek ini bertujuan untuk menyediakan sistem rekomendasi yang membantu pelangga
 
 ### 1. Content-Based Filtering
 Menggunakan kemiripan fitur produk untuk merekomendasikan item yang memiliki karakteristik serupa dengan produk yang dipilih oleh pengguna.
+Contoh : 
+
+KNITTED UNION FLAG HOT WATER BOTTLE
+→ WHITE SKULL HOT WATER BOTTLE
 
 ### 2. Collaborative Filtering
 Menganalisis pola pembelian antar pelanggan untuk menemukan produk yang sering dibeli oleh pengguna dengan minat yang sama.
 
+Contoh :
+RED WOOLLY HOTTIE WHITE HEART
+→ SCOTTIE DOG HOT WATER BOTTLE
+
 ---
 
 ## 🛠️ Tech Stack
+
 * **Language:** Python
 * **Framework:** Streamlit
 * **Data Processing:** Pandas, NumPy
@@ -45,6 +48,7 @@ Menganalisis pola pembelian antar pelanggan untuk menemukan produk yang sering d
 ---
 
 ## 📂 Struktur Project
+
 ```text
 assorules/
 ├── app.py                # Main Streamlit application
@@ -52,15 +56,44 @@ assorules/
 ├── requirements.txt      # Dependencies
 └── README.md
 
-## ⚙️ Cara Menjalankan
+---
 
-1. **Clone repository:**
-   ```bash
-   git clone [https://github.com/username/assorules.git](https://github.com/username/assorules.git)
-   cd assorules
+## 🚀 Cara Menjalankan Lokal
 
+1. Clone repository
+git clone https://github.com/hastisf/association-rules.git
+
+2. Masuk ke folder project
+cd assorules
+
+3. Install dependency
 pip install -r requirements.txt
+
+4. Jalankan aplikasi
 streamlit run app.py
+
+Aplikasi akan berjalan di:
+http://localhost:8501
+
+
+
+## 🌐 Deploy
+
+Aplikasi dideploy menggunakan Streamlit Community Cloud sehingga dapat diakses secara online melalui browser tanpa instalasi tambahan.
+
+
+
+## 🚀 Fitur Dashboard
+
+| Fitur | Keterangan |
+| :--- | :--- |
+| **Product Recommendation** | Rekomendasi produk berdasarkan item yang dipilih pengguna |
+| **Content-Based Filtering** | Menampilkan produk dengan karakteristik atau atribut serupa |
+| **Collaborative Filtering** | Menampilkan produk yang disukai oleh pelanggan dengan perilaku serupa |
+| **Market Basket Analysis** | Analisis kombinasi produk yang sering dibeli bersama dalam satu transaksi |
+| **Interactive Dashboard** | Visualisasi dan eksplorasi data transaksi secara interaktif |
+
+---
 
 ## 📈 Manfaat Bisnis
 * **Personalisasi Pengalaman:** Meningkatkan relevansi produk bagi setiap pelanggan dengan rekomendasi yang dipersonalisasi.
@@ -69,10 +102,7 @@ streamlit run app.py
 
 ---
 
-## 🌐 Live Demo
-Akses aplikasi melalui browser tanpa perlu instalasi:
-👉 **[collaborativerules.streamlit.app](https://collaborativerules.streamlit.app)**
-
----
-
-*Dibuat untuk tujuan edukasi dan pengembangan sistem rekomendasi retail.*
+## ⚠️ Catatan
+Hasil rekomendasi bergantung pada kualitas dan jumlah data transaksi yang tersedia.
+Tidak semua produk akan menghasilkan association rules yang kuat.
+Project ini dibuat untuk tujuan pembelajaran data mining, machine learning, dan sistem rekomendasi pada data retail.
