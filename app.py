@@ -37,21 +37,31 @@ def recommend_retail_cf(target_nama_produk, n=10):
         'Pearson Correlation': similar_products.values
     })
     
-    # [PERUBAHAN] Mapping kategori dilakukan saat nama produk masih UPPERCASE agar cocok dengan database master
+    # Mapping kategori dilakukan saat nama produk masih UPPERCASE
     mapping_cat = dict(zip(df_master_cf['nama_produk'], df_master_cf['product_category']))
     result['Kategori Produk'] = result['Nama Produk Rekomendasi'].map(mapping_cat)
     
-    # [PERUBAHAN] Mengubah nama produk rekomendasi menjadi lowercase (huruf kecil)
+    # Mengubah nama produk menjadi lowercase
     result['Nama Produk Rekomendasi'] = result['Nama Produk Rekomendasi'].str.lower()
     
     result['Alasan Rekomendasi'] = f'Pelanggan yang membeli "{target_nama_produk}" juga cenderung membeli produk ini.'
     
-    # [PERUBAHAN] Mengembalikan dataframe tanpa menyertakan 'Stock Code'
+    # Mengembalikan dataframe tanpa Stock Code
     return result[['Nama Produk Rekomendasi', 'Kategori Produk', 'Pearson Correlation', 'Alasan Rekomendasi']]
 
 # 3. INTERFACE APLIKASI STREAMLIT
 st.title("🛍️ Sistem Rekomendasi Produk Retail")
 st.subheader("Metode: Item-to-Item Collaborative Filtering (Pearson Correlation)")
+
+# Menambahkan penjelasan metode
+with st.expander("ℹ️ Apa itu metode ini?"):
+    st.markdown("""
+    * **Collaborative Filtering (Item-to-Item):** Teknik untuk memberikan rekomendasi produk berdasarkan pola perilaku pengguna di masa lalu. Jika banyak pelanggan membeli produk A dan B secara bersamaan, maka sistem menganggap produk tersebut 'berhubungan'.
+    * **Pearson Correlation:** Metode statistik untuk mengukur hubungan antara dua produk (-1 hingga 1):
+        * **Mendekati 1 (Positif):** Produk sangat sering dibeli bersamaan (sangat disarankan untuk rekomendasi).
+        * **Mendekati 0 (Netral):** Tidak ada hubungan pola pembelian yang signifikan antar produk.
+        * **Mendekati -1 (Negatif):** Hubungan berlawanan; jika pelanggan membeli satu produk, mereka jarang membeli produk lainnya (produk saling menggantikan).
+    """)
 
 st.markdown("---")
 
